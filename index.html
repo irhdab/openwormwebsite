@@ -1,1 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenWorm Project</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
 
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: #2575fc;
+            margin-bottom: 1rem;
+        }
+
+        .section-heading p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 25px;
+            flex: 1 1 300px;
+            max-width: 340px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #2575fc;
+            margin-top: 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #6a11cb;
+        }
+
+        .grey-section {
+            background-color: #f0f2f5;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #2575fc;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid #2575fc;
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 4rem 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: #2575fc;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .left::after, .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="hero-content">
+            <h1>OpenWorm Project</h1>
+            <p>Creating the world's first digital life form through open science</p>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="section-heading">
+            <h2>About OpenWorm</h2>
+            <p>An international open science collaboration dedicated to creating a complete digital model of the C. elegans nematode.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>OpenWorm aims to build the first comprehensive computational model of the Caenorhabditis elegans (C. elegans), a microscopic roundworm. With only 302 neurons and approximately 1000 cells, it is the perfect model organism for creating a complete simulation of a living being.</p>
+            </div>
+            <div class="card">
+                <h3>Why C. elegans?</h3>
+                <p>Despite its simplicity, the C. elegans exhibits complex behaviors including feeding, mating, and learning. It was the first multicellular organism to have its entire genome sequenced and its neural connections mapped, making it an ideal candidate for whole-organism modeling.</p>
+            </div>
+            <div class="card">
+                <h3>Open Science</h3>
+                <p>OpenWorm is committed to the principles of open science. All our models, data, and software are freely available to the scientific community and the public. We believe that collaboration and transparency accelerate scientific discovery.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="grey-section">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Project Components</h2>
+            <p>Our comprehensive approach integrates multiple biological systems</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature">
+                <div class="feature-icon">🧠</div>
+                <h3>Neural Network</h3>
+                <p>Simulating the complete connectome of 302 neurons and their connections to create a virtual nervous system.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💪</div>
+                <h3>Muscle Model</h3>
+                <p>Building a mechanical model of the worm's muscles and how they interact with the environment.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🧬</div>
+                <h3>Genetic Model</h3>
+                <p>Incorporating genetic data to influence cell behavior and development in our simulations.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🦠</div>
+                <h3>Cell Biology</h3>
+                <p>Modeling cellular processes including metabolism, signal transduction, and gene expression.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔄</div>
+                <h3>Integrative Model</h3>
+                <p>Combining all components into a unified simulation that reproduces the worm's behavior.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🖥️</div>
+                <h3>Simulation Platform</h3>
+                <p>Developing software tools that allow researchers to run and analyze simulations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-heading">
+            <h2>Project Timeline</h2>
+            <p>A decade of progress toward digital life</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>2011</h3>
+                    <p>Project inception with the goal of building a complete simulation of C. elegans.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>2014</h3>
+                    <p>First simulation of the worm's body mechanics and neural activity.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>2016</h3>
+                    <p>Development of the Sibernetic fluid mechanics simulator for realistic environment interactions.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>2018</h3>
+                    <p>Integration of neural activity with body movement, creating the first movements driven by simulated neurons.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>2020</h3>
+                    <p>Expansion to include more cellular processes and improved behavioral responses.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>2023</h3>
+                    <p>Advanced integration of genetic data and improved neural network modeling.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="grey-section">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Scientific Impact</h2>
+            <p>The broader implications of digital organism modeling</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Neuroscience</h3>
+                <p>OpenWorm provides insights into how neural circuits generate behavior, potentially leading to breakthroughs in understanding more complex nervous systems including human brains.</p>
+            </div>
+            <div class="card">
+                <h3>Medicine</h3>
+                <p>Digital models allow for rapid testing of pharmaceutical compounds and medical interventions, potentially accelerating drug discovery and reducing animal testing.</p>
+            </div>
+            <div class="card">
+                <h3>Artificial Intelligence</h3>
+                <p>Biologically-inspired neural networks may lead to more advanced AI systems that can learn and adapt like living organisms.</p>
+            </div>
+            <div class="card">
+                <h3>Systems Biology</h3>
+                <p>OpenWorm demonstrates how multi-scale modeling can integrate various biological processes, from molecular interactions to organism behavior.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Join the OpenWorm Community</h2>
+        <p>Whether you're a scientist, engineer, programmer, or simply curious about digital biology, there are many ways to get involved.</p>
+        <a href="#" class="btn">Contribute to OpenWorm</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>not a official site of openworm project</p>
+        <div class="social-links">
+            <a href="#">GitHub</a>
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
